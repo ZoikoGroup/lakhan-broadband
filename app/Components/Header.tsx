@@ -66,7 +66,7 @@ export default function Header() {
             isopen ? 'block' : 'hidden'
           } lg:hidden z-50`}
         >
-          <ul className="space-y-4 text-md bg-gray-200 p-4 text-gray-600 dark:text-gray-300">
+          <ul className="space-y-4 text-md bg-white p-4 text-black-600 dark:text-gray-300">
             <li onClick={() => setIsOpen(false)} className="hover:text-blue-900 cursor-pointer">
               Home Broadband
             </li>
