@@ -11,7 +11,6 @@ export default function Footer() {
                     <li><Link href="/BusinessB">Business Broadband</Link></li>
                     <li><Link href="/SmartBundles">Smart Bundles</Link></li>
                     <li><Link href="/DigitalLines">Digital Lines</Link></li>
-                    <li><Link href="/AllPlans">All Plans</Link></li>
                     <li><Link href="/AllPlans">Check my postcode</Link></li>
                     <li><Link href="/AllPlans">Refer a friend</Link></li>
                 </ul>
@@ -25,6 +24,7 @@ export default function Footer() {
                     <li><Link href="/ManageAccount">Manage My Account</Link></li>
                     <li><Link href="/PaymentsBilling">Payments & Billing</Link></li>
                     <li><Link href="/ReportFault">Report a Fault</Link></li>
+                    <li><Link href="/ContactUs">Contact Us</Link></li>
                 </ul>
             </div>
 
