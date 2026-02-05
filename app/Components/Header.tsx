@@ -19,7 +19,7 @@ export default function Header() {
       </Link>
         {/* Desktop Nav Items */}
         <div className="nav-items ">
-          <ul className="hidden min-[1150px]:flex items-center gap-10 md:gap-14 bg-gray-200 rounded-full px-6 py-4 md:px-8 md:py-7 md:text-base max-w-fit">
+          <ul className="hidden min-[1150px]:flex items-center gap-10 md:gap-14 bg-gray-100 rounded-full px-6 py-4 md:px-7 md:py-6 md:text-base max-w-fit">
             <li className="hover:text-blue-900 dark:hover:text-blue-500 cursor-pointer">
               Home Broadband
             </li>
