@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <div className="bg-[#19598b] w-full border-t-2 p-5">
+    <div className="bg-[#19598b] max-w-screen border-t-2 p-3">
         <div className="footer-items w-full flex-col md:flex md:flex-row justify-between mx-auto p-5 md:p-10">
             <div>
                 <h1 className='text-2xl md:text-3xl text-[#f5c241] font-bold my-3'>Zoiko Broadband</h1>
@@ -50,8 +50,8 @@ export default function Footer() {
                 </ul>
             </div>
         </div>
-        <div className="text-center p-5 border-t-2 text-white w-[90%] mx-auto">
-           <p className="font-semibold">&copy; 2026 Zoiko Broadband | Zoiko Broadband is a trading name of Zoiko Telecom Ltd., registered in England & Wales | Company No. 15021457 | VAT No 465 1110 23 |</p> 
+        <div className="text-center p-2 border-t-2 text-white w-[90%] mx-auto">
+           <p className="font-semibold">&copy; 2026 Zoiko Broadband | Zoiko Broadband is a trading name of Zoiko Telecom Ltd., registered in England & Wales | Company No. 15021457 | VAT No 465 1110 23|</p> 
            <p className="font-semibold"> All rights reserved.  Zoiko Telecom Ltd is Ofcom registered and adheres to the Broadband Speeds Code of Practice.</p>
         </div>
     </div>
