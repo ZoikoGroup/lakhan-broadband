@@ -6,8 +6,9 @@ export default function Header() {
       const [isopen, setIsOpen] = React.useState(false);
   return (
   
-     <div className="mb-30">
+    <div className="relative ">
 
+      {/* <nav className=" bg-white fixed top-0 flex w-full items-center justify-around px-4 md:px-8 lg:px-16"> */}
       <nav className=" bg-white fixed top-0 flex w-full items-center justify-around px-4 md:px-8 lg:px-16">
         {/* Logo */}
       <Link href="/">
@@ -69,7 +70,7 @@ export default function Header() {
             isopen ? 'block' : 'hidden'
           } lg:hidden z-50`}
         >
-          <ul className="space-y-4 text-md bg-white p-4 text-black-600 dark:text-gray-300">
+          <ul className="space-y-4 text-md bg-white p-4 text-black-600">
             <li onClick={() => setIsOpen(false)} className="hover:text-blue-900 cursor-pointer">
               <Link href="/home-broadband">Home Broadband</Link>
             </li>

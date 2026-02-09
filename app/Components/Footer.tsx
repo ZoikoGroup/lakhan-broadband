@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <div className="bg-[#19598b] max-w-screen border-t-2 p-3">
+    <div className="bg-[#19598b] w-screen border-t-2 p-3">
         <div className="footer-items w-full flex-col md:flex md:flex-row justify-between mx-auto p-5 md:p-10">
             <div>
                 <h1 className='text-2xl md:text-3xl text-[#f5c241] font-bold my-3'>Zoiko Broadband</h1>
