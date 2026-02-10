@@ -1,32 +1,149 @@
 "use client";
 import { useState } from "react";
 
+interface Plan {
+  title: string;
+  speed: string;
+  downloadSpeed: string;
+  uploadSpeed: string;
+  price: number;
+  priceDisplay: string;
+  desc: string;
+  features: string[];
+  popularity: number;
+  contractLength: number;
+  badge: string | null;
+}
+
 export default function HomePage() {
-    const [active, setActive] = useState(1);
+  const [active, setActive] = useState(1);
+  const [activeTab, setActiveTab] = useState("Speed");
+
+  const tabs = ["Speed", "Price", "Popularity", "Contract Length"];
 
   const testimonials = [
     {
       name: "Aladdin Sullivan",
       role: "CEO Nigiang",
-      text:
-        "Helped me to elaborate employee data, not only save and store, but also elaborate, process it so that it can be used as employee evaluation material. Such as looking at employee discipline from the recap of absences, leave, permits and more.",
+      text: "Helped me to elaborate employee data, not only save and store, but also elaborate, process it so that it can be used as employee evaluation material. Such as looking at employee discipline from the recap of absences, leave, permits and more.",
     },
     {
       name: "Mahmood Ali",
       role: "CEO Nigiang",
-      text:
-        "Helped me to elaborate employee data, not only save and store, but also elaborate, process it so that it can be used as employee evaluation material. Such as looking at employee discipline from the recap of absences, leave, permits and more.",
+      text: "Helped me to elaborate employee data, not only save and store, but also elaborate, process it so that it can be used as employee evaluation material. Such as looking at employee discipline from the recap of absences, leave, permits and more.",
     },
     {
       name: "Bang Cristiano",
       role: "CEO Emyu",
-      text:
-        "Helped me to elaborate employee data, not only save and store, but also elaborate, process it so that it can be used as employee evaluation material. Such as looking at employee discipline from the recap of absences, leave, permits and more.",
+      text: "Helped me to elaborate employee data, not only save and store, but also elaborate, process it so that it can be used as employee evaluation material. Such as looking at employee discipline from the recap of absences, leave, permits and more.",
     },
   ];
+  // All plans data
+  const allPlans = [
+    {
+      title: "Zippy Essential",
+      speed: "0.5 Mbps",
+      downloadSpeed: "0.5",
+      uploadSpeed: "0.5",
+      price: 22.0,
+      priceDisplay: "£22.00",
+      desc: "Download Speed",
+      features: [
+        "Perfect for basic browsing",
+        "Email & social media",
+        "No usage caps",
+        "UK-based support",
+      ],
+      popularity: 2,
+      contractLength: 12,
+      badge: null,
+    },
+    {
+      title: "Blitz Core",
+      speed: "40/10 Mbps",
+      downloadSpeed: "40",
+      uploadSpeed: "10",
+      price: 35.0,
+      priceDisplay: "£35.00",
+      desc: "Download Speed",
+      features: [
+        "Consistent fibre speeds",
+        "Low latency gaming",
+        "Multiple HD streams",
+        "Free router & installation",
+      ],
+      popularity: 3,
+      contractLength: 18,
+      badge: null,
+    },
+    {
+      title: "Quantum Boost",
+      speed: "115/20 Mbps",
+      downloadSpeed: "115",
+      uploadSpeed: "20",
+      price: 42.99,
+      priceDisplay: "£42.99",
+      desc: "Download Speed",
+      features: [
+        "Ultra-low downloads",
+        "Perfect for home offices",
+        "Seamless video conferencing",
+        "Advanced router included",
+      ],
+      popularity: 4,
+      contractLength: 24,
+      badge: "FULL FIBRE",
+    },
+    {
+      title: "Supersonic Infinity",
+      speed: "1000/115 Mbps",
+      downloadSpeed: "1000",
+      uploadSpeed: "115",
+      price: 61.99,
+      priceDisplay: "£61.99",
+      desc: "Download Speed",
+      features: [
+        "Gigabit speeds",
+        "Future-proof technology",
+        "Unlimited potential",
+        "White-glove service",
+      ],
+      popularity: 5,
+      contractLength: 24,
+      badge: "FULL FIBRE",
+    },
+  ];
+
+  // Sort plans based on active tab (you can implement actual sorting logic here)
+  const getSortedPlans = () => {
+    let sorted = [...allPlans];
+
+    switch (activeTab) {
+      case "Speed":
+        sorted.sort(
+          (a, b) => parseFloat(b.downloadSpeed) - parseFloat(a.downloadSpeed),
+        );
+        break;
+      case "Price":
+        sorted.sort((a, b) => a.price - b.price);
+        break;
+      case "Popularity":
+        sorted.sort((a, b) => b.popularity - a.popularity);
+        break;
+      case "Contract Length":
+        sorted.sort((a, b) => a.contractLength - b.contractLength);
+        break;
+      default:
+        break;
+    }
+
+    return sorted;
+  };
+
   return (
-    <div className="container w-screen  ">
-      <section className="hero-section w-screen mt-25 bg-[#19598b] flex flex-col lg:flex-row items-start lg:items-center justify-center gap-10 px-5 sm:px-10 md:px-16 lg:px-32 py-12 lg:min-h-[80vh]">
+    <div className="">
+      {/* Hero - section ..*/}
+      <section className="w-full mt-25 bg-[#19598b] flex flex-col lg:flex-row items-start lg:items-center justify-center gap-10 px-5 sm:px-10 md:px-16 lg:px-32 py-12 lg:min-h-[80vh]">
         {/* LEFT CONTENT */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center">
           {/* Row 1 */}
@@ -68,14 +185,15 @@ export default function HomePage() {
         {/* RIGHT IMAGE */}
         <div className="w-full lg:w-1/2 flex items-center justify-center">
           <img
-            className="w-full max-w-md sm:max-w-lg lg:max-w-xl rounded-2xl border-4 border-amber-950"
+            className="w-full max-w-md sm:max-w-lg lg:max-w-xl rounded-2xl border-2 border-blue-950"
             src="/hero-pic-right.jpg"
             alt="hero-pic-right"
           />
         </div>
       </section>
 
-      <section className="w-screen bg-[#E5F0FF] py-16 px-4">
+      {/* Find your plan .. */}
+      <section className="w-full bg-[#E5F0FF] py-16 px-4">
         <div className="max-w-6xl mx-auto bg-white rounded-3xl p-6 md:p-10">
           {/* Header */}
           <h2 className="text-2xl md:text-3xl font-bold text-center text-[#10446C]">
@@ -195,7 +313,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="w-screen bg-[#F5FAFF] py-16 px-4">
+      {/* Choose your plan .. */}
+      <section className="w-full bg-[#F5FAFF] py-16 px-4">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <h2 className="text-2xl md:text-3xl font-bold text-center text-[#10446C]">
@@ -206,97 +325,89 @@ export default function HomePage() {
             Superfast broadband packages designed for modern British homes
           </p>
 
-          {/* Tabs */}
-          <div className="mt-6 flex gap-3 justify-center flex-wrap">
-            {["Speed", "Price", "Popularity", "Contract Length"].map(
-              (tab, i) => (
-                <button
-                  key={tab}
-                  className={`px-4 py-2 rounded-full text-sm border
-            ${
-              i === 0
-                ? "bg-[#F5C241] text-[#10446C] border-[#F5C241]"
-                : "bg-white text-gray-600 hover:bg-gray-100"
-            }`}
-                >
-                  {tab}
-                </button>
-              ),
-            )}
+          {/* Tabs - Filtering Buttons */}
+          <div className="mt-8 flex gap-2 justify-center items-center bg-gray-100 rounded-full p-2 max-w-fit mx-auto">
+            {tabs.map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`px-6 py-3 rounded-full text-sm font-medium transition-all whitespace-nowrap
+                ${
+                  activeTab === tab
+                    ? "bg-[#F5C241] text-[#10446C] shadow-sm"
+                    : "bg-transparent text-gray-600 hover:text-[#10446C]"
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
           </div>
 
-          {/* Plans */}
+          {/* Plans Grid */}
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* CARD */}
-            {[
-              {
-                title: "Zippy Essential",
-                speed: "0.5 Mbps",
-                price: "£22.00",
-                desc: "Perfect for basic browsing",
-              },
-              {
-                title: "Blitz Core",
-                speed: "40/10 Mbps",
-                price: "£35.00",
-                desc: "Consistent fibre speeds",
-              },
-              {
-                title: "Quantum Boost",
-                speed: "115/20 Mbps",
-                price: "£42.99",
-                desc: "For fast downloads",
-              },
-              {
-                title: "Supersonic Infinity",
-                speed: "1000/115 Mbps",
-                price: "£61.99",
-                desc: "Ultra-fast speeds",
-              },
-            ].map((plan) => (
+            {getSortedPlans().map((plan: Plan) => (
               <div
                 key={plan.title}
-                className={`rounded-2xl p-6 flex flex-col justify-between border hover:shadow-xl transition-all`}
+                className="bg-white rounded-2xl p-6 flex flex-col justify-between border-2 border-gray-100 hover:border-[#F5C241] hover:shadow-xl transition-all relative"
               >
+                {/* Badge if exists */}
+                {plan.badge && (
+                  <div className="absolute top-4 right-4 bg-[#10446C] text-white text-xs font-bold px-3 py-1 rounded-full">
+                    {plan.badge}
+                  </div>
+                )}
+
                 <div>
-                  <h3 className="font-semibold text-lg">{plan.title}</h3>
+                  {/* Plan Title */}
+                  <h3 className="font-bold text-lg text-[#10446C] pr-20">
+                    {plan.title}
+                  </h3>
 
-                  <p className={`mt-3 font-bold text-xl`}>{plan.speed}</p>
+                  {/* Speed */}
+                  <p className="mt-4 font-bold text-3xl text-[#F5C241]">
+                    {plan.speed}
+                  </p>
 
-                  <p className="mt-1 text-sm opacity-80">Download / Upload</p>
+                  <p className="mt-1 text-sm text-gray-500">{plan.desc}</p>
 
-                  <p className="mt-4 text-2xl font-bold">{plan.price}</p>
-
-                  <p className="mt-2 text-sm opacity-80">{plan.desc}</p>
+                  {/* Price */}
+                  <div className="mt-6">
+                    <p className="text-4xl font-bold text-[#10446C]">
+                      {plan.priceDisplay}
+                    </p>
+                    <p className="text-sm text-gray-500 mt-1">per month</p>
+                  </div>
 
                   {/* Features */}
-                  <ul className="mt-4 space-y-2 text-sm">
-                    <li>✔ Email & social media</li>
-                    <li>✔ UK usage cap</li>
-                    <li>✔ Unlimited support</li>
+                  <ul className="mt-6 space-y-3 text-sm text-gray-700">
+                    {plan.features.map((feature: string, index: number) => (
+                      <li key={index} className="flex items-start gap-2">
+                        <span className="text-green-600 mt-0.5">✓</span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
                   </ul>
                 </div>
 
-                <button
-                  className={`mt-6 py-3 rounded-xl font-semibold bg-[#10446C] text-white
-              `}
-                >
+                {/* Button */}
+                <button className="mt-6 w-full py-3 rounded-full font-semibold bg-[#10446C] text-white hover:bg-[#0d3a5c] transition-colors">
                   Choose This Package
                 </button>
               </div>
             ))}
           </div>
 
-          {/* View All */}
+          {/* View All Button */}
           <div className="mt-12 flex justify-center">
-            <button className="px-8 py-3 rounded-full border border-[#10446C] text-[#10446C] hover:bg-[#10446C] hover:text-white transition">
+            <button className="px-8 py-3 rounded-full border-2 border-[#10446C] text-[#10446C] font-semibold hover:bg-[#10446C] hover:text-white transition-all">
               View All
             </button>
           </div>
         </div>
       </section>
 
-      <section className="w-screen bg-[#FFD56A] py-14 px-4">
+      {/* Why choose zoiko .. */}
+      <section className="w-full bg-[#FFD56A] py-14 px-4">
         <div className="max-w-7xl mx-auto text-center">
           {/* Heading */}
           <h2 className="text-2xl md:text-3xl font-bold text-[#0F3D5E]">
@@ -350,184 +461,197 @@ export default function HomePage() {
         </div>
       </section>
 
-     <section className="w-screen bg-linear-to-r from-[#0F3D5E] to-[#1C5FA8] py-16 px-4">
-  <div className="max-w-6xl mx-auto text-center text-white">
+      {/* Explore bundles .. */}
+      <section className="w-full bg-[#19598b] py-16 px-4">
+        <div className="max-w-6xl mx-auto text-center text-white">
+          {/* Heading */}
+          <h2 className="text-lg md:text-xl font-semibold text-[#F5C241]">
+            Save up to 30% when you bundle Zoiko Broadband with:
+          </h2>
 
-    {/* Heading */}
-    <h2 className="text-lg md:text-xl font-semibold text-[#F5C241]">
-      Save up to 30% when you bundle Zoiko Broadband with:
-    </h2>
+          <p className="text-sm md:text-base text-white/90 mt-2 max-w-2xl mx-auto">
+            Create your complete connected ecosystem with exclusive multiservice
+            discounts for British families
+          </p>
 
-    <p className="text-sm md:text-base text-white/80 mt-2 max-w-2xl mx-auto">
-      Create your complete connected ecosystem with exclusive multiservice
-      discounts for British families
-    </p>
+          {/* Bundle cards */}
+          <div className="mt-12 flex flex-col lg:flex-row items-start justify-center gap-8">
+            {/* Left Card - Zoiko Mobile */}
+            <div className="text-white rounded-2xl p-6 w-full max-w-sm">
+              {/* Logo with white background */}
+              <div className="bg-white rounded-xl p-3 w-fit mx-auto mb-4">
+                <img src="/ZM-logo.png" alt="Zoiko Mobile" className="h-10" />
+              </div>
 
-    {/* Bundle cards */}
-    <div className="mt-12 flex flex-col lg:flex-row items-center justify-center gap-8">
+              <h3 className="font-semibold text-[#F5C241] text-lg">
+                Zoiko Mobile
+              </h3>
 
-      {/* Left Card */}
-      <div className="bg-white text-[#10446C] rounded-2xl p-6 w-full max-w-sm shadow-lg">
-        <img
-          src="/zoiko-mobile.png"
-          alt="Zoiko Mobile"
-          className="mx-auto mb-4 h-10"
-        />
+              <p className="text-sm text-white mt-2">
+                Dual SIM plans with international roaming. Perfect for British
+                expats and frequent travellers.
+              </p>
 
-        <h3 className="font-semibold text-lg">Zoiko Mobile</h3>
+              <button className="mt-4 px-6 py-2 rounded-full bg-[#F5C241] text-[#10446C] text-sm font-semibold hover:bg-[#E6B93A] transition">
+                View Mobile
+              </button>
+            </div>
 
-        <p className="text-sm text-gray-600 mt-2">
-          Dual SIM plans with international roaming. Perfect for British
-          expats and frequent travellers.
-        </p>
+            {/* Connector – Dashed Line (desktop only) */}
+            <div className="hidden lg:flex items-start justify-center pt-10">
+              <div className="w-40 border-t-2 border-dashed border-white"></div>
+            </div>
 
-        <button className="mt-4 px-6 py-2 rounded-full bg-[#10446C] text-white text-sm hover:bg-[#0F3D5E] transition">
-          View Mobile
-        </button>
-      </div>
+            {/* Right Card - Zoiko Orbit */}
+            <div className="text-white rounded-2xl p-6 w-full max-w-sm">
+              {/* Logo with white background */}
+              <div className="bg-white rounded-xl p-3 w-fit mx-auto mb-4">
+                <img src="/ZO-Logo.png" alt="Zoiko Orbit" className="h-10" />
+              </div>
 
-      {/* Connector – SAFE VERSION (desktop only) */}
-      <div className="hidden lg:flex items-center justify-center">
-        <div className="w-40 border-t-2 border-dashed border-white/40"></div>
-      </div>
+              <h3 className="font-semibold text-[#F5C241] text-lg">
+                Zoiko Orbit
+              </h3>
 
-      {/* Right Card */}
-      <div className="bg-white text-[#10446C] rounded-2xl p-6 w-full max-w-sm shadow-lg">
-        <img
-          src="/zoiko-orbit.png"
-          alt="Zoiko Orbit"
-          className="mx-auto mb-4 h-10"
-        />
+              <p className="text-sm text-white mt-2">
+                Global travel eSIMs for seamless connectivity. Stay connected
+                from London to Lisbon and beyond.
+              </p>
 
-        <h3 className="font-semibold text-lg">Zoiko Orbit</h3>
+              <button className="mt-4 px-6 py-2 rounded-full bg-[#F5C241] text-[#10446C] text-sm font-semibold hover:bg-[#E6B93A] transition">
+                View Orbit
+              </button>
+            </div>
+          </div>
 
-        <p className="text-sm text-gray-600 mt-2">
-          Global travel eSIMs for seamless connectivity. Stay connected
-          from London to Lisbon and beyond.
-        </p>
+          {/* CTA Button */}
+          <div className="mt-10">
+            <button className="px-8 py-3 rounded-full bg-[#F5C241] text-[#10446C] font-semibold hover:scale-105 transition-transform">
+              Explore Bundles
+            </button>
+          </div>
+        </div>
+      </section>
 
-        <button className="mt-4 px-6 py-2 rounded-full bg-[#10446C] text-white text-sm hover:bg-[#0F3D5E] transition">
-          View Orbit
-        </button>
-      </div>
-    </div>
+      {/* Check your postcode */}
+      <section className="w-full bg-[#F4F8FC] py-20 px-4">
+        <div className="max-w-4xl mx-auto flex justify-center">
+          {/* Card */}
+          <div className="w-full max-w-xl bg-white border-t-4 border-b-blue-900 rounded-2xl shadow-lg p-6 sm:p-8 text-center">
+            {/* Icon */}
+            <div className="w-14 h-14 mx-auto rounded-full bg-[#F5C241] flex items-center justify-center mb-4">
+              <svg
+                className="w-6 h-6 text-[#10446C]"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path d="M10.707 1.293a1 1 0 00-1.414 0l-7 7A1 1 0 003 9h1v7a1 1 0 001 1h4a1 1 0 001-1v-4h2v4a1 1 0 001 1h4a1 1 0 001-1V9h1a1 1 0 00.707-1.707l-7-7z" />
+              </svg>
+            </div>
 
-    {/* CTA */}
-    <div className="mt-10">
-      <button className="px-8 py-3 rounded-full bg-[#F5C241] text-[#10446C] font-semibold hover:scale-105 transition-transform">
-        Explore Bundles
-      </button>
-    </div>
+            {/* Text */}
+            <h2 className="text-lg sm:text-xl font-bold text-[#10446C]">
+              Let’s see if we’re in your area
+            </h2>
 
-  </div>
-</section>
+            <p className="text-sm text-gray-600 mt-2">
+              Enter your postcode to check availability and get results in
+              seconds
+            </p>
 
-      <section className="w-screen bg-[#F4F8FC] py-20 px-4">
-  <div className="max-w-4xl mx-auto flex justify-center">
-
-    {/* Card */}
-    <div className="w-full max-w-xl bg-white rounded-2xl shadow-lg p-6 sm:p-8 text-center">
-
-      {/* Icon */}
-      <div className="w-14 h-14 mx-auto rounded-full bg-[#F5C241] flex items-center justify-center mb-4">
-        <svg
-          className="w-6 h-6 text-[#10446C]"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-        >
-          <path d="M10.707 1.293a1 1 0 00-1.414 0l-7 7A1 1 0 003 9h1v7a1 1 0 001 1h4a1 1 0 001-1v-4h2v4a1 1 0 001 1h4a1 1 0 001-1V9h1a1 1 0 00.707-1.707l-7-7z" />
-        </svg>
-      </div>
-
-      {/* Text */}
-      <h2 className="text-lg sm:text-xl font-bold text-[#10446C]">
-        Let’s see if we’re in your area
-      </h2>
-
-      <p className="text-sm text-gray-600 mt-2">
-        Enter your postcode to check availability and get results in seconds
-      </p>
-
-      {/* Form */}
-      <div className="mt-6 flex flex-col sm:flex-row gap-3">
-        <input
-          type="text"
-          placeholder="Enter your postcode (e.g. SW1A 1AA)"
-          className="flex-1 px-4 py-3 rounded-xl border border-gray-300
+            {/* Form */}
+            <div className="mt-6 flex flex-col sm:flex-row gap-3">
+              <input
+                type="text"
+                placeholder="Enter your postcode (e.g. SW1A 1AA)"
+                className="flex-1 px-4 py-3 rounded-xl border border-gray-300
             focus:outline-none focus:ring-2 focus:ring-[#F5C241]"
-        />
+              />
 
-        <button
-          className="px-6 py-3 rounded-xl bg-[#F5C241] text-[#10446C]
+              <button
+                className="px-6 py-3 rounded-xl bg-[#F5C241] text-[#10446C]
             font-semibold hover:bg-[#E6B93A] transition"
-        >
-          Check Now
-        </button>
-      </div>
+              >
+                Check Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    </div>
-  </div>
-</section>
-
- {/* TESTIMONIAL SLIDER SECTION */}
+      {/* TESTIMONIAL SLIDER SECTION */}
       <section className="w-full border-t-2 border-amber-200 bg-[#F8FAFF] py-20 px-4">
-      <div className="max-w-6xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-2xl font-bold text-[#10446C]">
+            What they say about us
+          </h2>
+          <p className="text-sm text-gray-500 mt-2">Choose your package</p>
 
-        <h2 className="text-2xl font-bold text-[#10446C]">
-          What they say about us
-        </h2>
-        <p className="text-sm text-gray-500 mt-2">
-          Choose your package
-        </p>
-
-        {/* SLIDER */}
-        <div className="mt-12 overflow-hidden">
-          <div className="flex justify-center gap-6">
-            {testimonials.map((item, index) => (
-              <div
-                key={index}
-                className={`w-full max-w-sm transition-all duration-300
+          {/* SLIDER */}
+          <div className="mt-12 relative overflow-hidden">
+            {/* Desktop view - Show all 3 cards */}
+            <div className="hidden md:flex justify-center gap-6">
+              {testimonials.map((item, index) => (
+                <div
+                  key={index}
+                  className={`w-full max-w-sm transition-all duration-300
                   ${
                     index === active
                       ? "bg-[#0F3D5E] text-white scale-100"
                       : "bg-white text-gray-600 opacity-60"
                   } rounded-2xl p-6`}
-              >
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-full bg-gray-300"></div>
+                    <div className="text-left">
+                      <h4 className="font-semibold">{item.name}</h4>
+                      <p className="text-xs opacity-70">{item.role}</p>
+                    </div>
+                  </div>
+
+                  <p className="text-sm leading-relaxed text-left">
+                    "{item.text}"
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Mobile view - Show only active card */}
+            <div className="md:hidden flex justify-center">
+              <div className="w-full max-w-sm bg-[#0F3D5E] text-white rounded-2xl p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 rounded-full bg-gray-300"></div>
-                  <div>
+                  <div className="text-left">
                     <h4 className="font-semibold">
-                      {item.name}
+                      {testimonials[active].name}
                     </h4>
                     <p className="text-xs opacity-70">
-                      {item.role}
+                      {testimonials[active].role}
                     </p>
                   </div>
                 </div>
 
-                <p className="text-sm leading-relaxed">
-                  “{item.text}”
+                <p className="text-sm leading-relaxed text-left">
+                  "{testimonials[active].text}"
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* DOTS */}
+          <div className="flex justify-center gap-2 mt-6">
+            {testimonials.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setActive(i)}
+                className={`h-2 rounded-full transition-all
+                ${i === active ? "w-6 bg-[#10446C]" : "w-2 bg-gray-300"}
+              `}
+              />
             ))}
           </div>
         </div>
-
-        {/* DOTS */}
-        <div className="flex justify-center gap-2 mt-6">
-          {testimonials.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setActive(i)}
-              className={`h-2 rounded-full transition-all
-                ${i === active ? "w-6 bg-[#10446C]" : "w-2 bg-gray-300"}
-              `}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
-
+      </section>
     </div>
   );
 }
