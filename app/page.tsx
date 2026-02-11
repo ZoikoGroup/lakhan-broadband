@@ -341,7 +341,7 @@ return (
     <button
       key={tab}
       onClick={() => setActiveTab(tab)}
-      className={`px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full text-[10px] sm:text-xs md:text-sm font-medium transition-all whitespace-nowrap flex-shrink-0
+      className={`px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full text-[10px] sm:text-xs md:text-sm font-medium transition-all whitespace-nowrap shrink-0
       ${
         activeTab === tab
           ? "bg-[#F5C241] text-[#10446C] shadow-sm"
