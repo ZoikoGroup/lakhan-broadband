@@ -62,7 +62,7 @@ export default function Footer() {
     <div className="bg-[#10446C] w-full border-t-2 p-3">
       <div className="footer-items w-9/10 mx-auto p-5 md:p-10">
         {/* Desktop View - Standard Layout */}
-        <div className="hidden md:flex md:flex-row justify-between">
+        <div className="hidden lg:flex lg:flex-row justify-between">
           {footerSections.map((section) => (
             <div key={section.id}>
               <h1 className="text-2xl md:text-2xl text-[#f5c241] font-bold my-3">
@@ -82,7 +82,7 @@ export default function Footer() {
         </div>
 
         {/* Mobile View - Accordion Layout */}
-        <div className="md:hidden flex flex-col gap-2">
+        <div className="lg:hidden flex flex-col gap-2">
           {footerSections.map((section) => (
             <div key={section.id} className="border-b border-[#2a6d9e]">
               {/* Section Header - Clickable */}

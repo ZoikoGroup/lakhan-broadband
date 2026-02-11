@@ -7,7 +7,7 @@ export default function Header() {
   return (
   
     <div className="relative">
-      <nav className="bg-white fixed top-0 z-50 flex w-full items-center justify-around px-4 md:px-8 lg:px-16 shadow-sm">
+      <nav className="bg-white fixed top-0 z-50 flex w-full items-center justify-around px-4 md:px-8 lg:px-16 ">
         {/* Logo */}
         <Link href="/">
           <img
@@ -55,7 +55,7 @@ export default function Header() {
           {/* Hamburger Button with Animation */}
           <button
             id="hamburger-button"
-            className="flex flex-col bg-black rounded-xl gap-1.5 min-[1150px]:hidden w-8 h-8 justify-center items-center relative"
+            className="flex flex-col text-black rounded-xl gap-1.5 min-[1150px]:hidden w-8 h-8 md:w-12 md:h-12 justify-center items-center relative"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
