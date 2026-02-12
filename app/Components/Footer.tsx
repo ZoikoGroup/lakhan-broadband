@@ -39,7 +39,7 @@ export default function Footer() {
       title: "Legal",
       links: [
         { name: "Terms & Conditions", href: "/terms-conditions" },
-        { name: "Privacy Policy", href: "/privacy-policy" },
+        { name: "Privacy Notice", href: "/privacy-notice" },
         { name: "Cookies Policy", href: "/cookies-policy" },
         { name: "Ofcom Speed Commitment", href: "/ofcom-speed-commitment" },
         { name: "Accessibility Statement", href: "/accessibility-statement" },
