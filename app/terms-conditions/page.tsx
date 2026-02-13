@@ -31,11 +31,11 @@ export default function page() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-10">
           {/* ================= Sidebar ================= */}
           <aside className="lg:col-span-1 bg-white p-6 rounded-xl shadow-sm h-fit">
-            <h3 className="text-lg font-semibold text-[#10446C] mb-6">
+            <h3 className="text-lg md:text-xl font-semibold text-[#10446C] mb-6">
               Quick Navigation
             </h3>
 
-            <ul className="space-y-4 text-sm text-[#10446C]">
+            <ul className="space-y-4 text-base md:text-lg text-[#10446C]">
               {[
                 "Agreement Overview",
                 "Eligibility & Activation",
@@ -52,7 +52,7 @@ export default function page() {
               ].map((item, index) => (
                 <li key={index}>
                   <a
-                    href={`#section-${index + 1}`}
+                    href={`#section-${index}`}
                     className="hover:text-amber-500 transition-colors"
                   >
                     {item}
@@ -69,7 +69,7 @@ export default function page() {
               <h2 className="text-2xl font-semibold text-[#10446C]">
                 1. Agreement Overview
               </h2>
-              <p className="mt-4 text-gray-700 leading-relaxed">
+              <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
                 This agreement governs the provision of broadband services by
                 Zoiko Broadband to residential customers. By using our services,
                 you agree to be bound by these terms and conditions.
@@ -84,7 +84,7 @@ export default function page() {
               <h2 className="text-2xl font-semibold text-[#10446C]">
                 2. Eligibility & Activation
               </h2>
-              <p className="mt-4 text-gray-700 leading-relaxed">
+              <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
                 Our services are available to residential customers aged 18 or
                 over. Service activation is subject to successful credit checks
                 and availability at your location.
@@ -98,7 +98,7 @@ export default function page() {
               <h2 className="text-2xl font-semibold text-[#10446C]">
                 3. Our Services
               </h2>
-              <p className="mt-4 text-gray-700 leading-relaxed">
+              <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
                 We provide broadband internet services including ADSL, FTTC, and
                 FTTP connections. Service speeds and availability vary by
                 location and technology type.
@@ -112,15 +112,15 @@ export default function page() {
               <h2 className="text-2xl font-semibold text-[#10446C]">
                 4. Pricing, Billing & Charges
               </h2>
-              <p className="mt-4 text-gray-700 leading-relaxed">
+              <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
                 4.1 You agree to pay all charges in line with the pricing agreed
                 at the point of sign-up.
               </p>
-              <p className="mt-2 text-gray-700 leading-relaxed">
+              <p className="mt-2 text-base md:text-lg text-gray-700 leading-relaxed">
                 4.2 Charges may vary if you exceed your usage cap or request
                 additional services.
               </p>
-              <p className="mt-2 text-gray-700 leading-relaxed">
+              <p className="mt-2 text-base md:text-lg text-gray-700 leading-relaxed">
                 4.3 All pricing includes VAT unless otherwise stated.
               </p>
             </div>
@@ -131,7 +131,7 @@ export default function page() {
               <h2 className="text-2xl font-semibold text-[#10446C]">
                 5. Usage, Fair Use & Restrictions
               </h2>
-              <p className="mt-4 text-gray-700 leading-relaxed">
+              <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
                 Fair use policies apply to ensure network performance for all
                 customers. Excessive usage may result in traffic management or
                 additional charges.
@@ -144,7 +144,7 @@ export default function page() {
               <h2 className="text-2xl font-semibold text-[#10446C]">
                 6. Contract Duration & Cancellation
               </h2>
-              <p className="mt-4 text-gray-700 leading-relaxed">
+              <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
                 Standard contracts are for 12 months minimum term. You have a
                 14-day cooling-off period from activation to cancel without
                 penalty.
@@ -157,7 +157,7 @@ export default function page() {
               <h2 className="text-2xl font-semibold text-[#10446C]">
                 7. Equipment & Installation
               </h2>
-              <p className="mt-4 text-gray-700 leading-relaxed">
+              <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
                 Equipment remains property of Zoiko Broadband and must be
                 returned within 30 days of service termination in good working
                 condition.
@@ -170,7 +170,7 @@ export default function page() {
               <h2 className="text-2xl font-semibold text-[#10446C]">
                 8. Technical Support & Repairs
               </h2>
-              <p className="mt-4 text-gray-700 leading-relaxed">
+              <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
                 We provide technical support and fault resolution services.
                 Response times vary based on fault severity and location
                 accessibility.
@@ -183,7 +183,7 @@ export default function page() {
               <h2 className="text-2xl font-semibold text-[#10446C]">
                 9. Data Protection & Privacy
               </h2>
-              <p className="mt-4 text-gray-700 leading-relaxed">
+              <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
                 Your personal data is processed in accordance with our Privacy
                 Notice and UK GDPR requirements. We do not sell your personal
                 information to third parties.
@@ -196,7 +196,7 @@ export default function page() {
               <h2 className="text-2xl font-semibold text-[#10446C]">
                 10. Liability & Limitations
               </h2>
-              <p className="mt-4 text-gray-700 leading-relaxed">
+              <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
                 Our liability is limited as set out in these terms. We are not
                 liable for indirect or consequential losses arising from service
                 interruptions.
@@ -209,7 +209,7 @@ export default function page() {
               <h2 className="text-2xl font-semibold text-[#10446C]">
                 11. Complaints & Dispute Resolution
               </h2>
-              <p className="mt-4 text-gray-700 leading-relaxed">
+              <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
                 We have established procedures for handling complaints.
                 Unresolved disputes may be referred to Ofcom or alternative
                 dispute resolution services.
@@ -222,7 +222,7 @@ export default function page() {
               <h2 className="text-2xl font-semibold text-[#10446C]">
                 12. Changes to Terms
               </h2>
-              <p className="mt-4 text-gray-700 leading-relaxed">
+              <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
                 We may update these terms with 30 days' notice. Continued use of
                 our services constitutes acceptance of revised terms.
               </p>
@@ -234,7 +234,7 @@ export default function page() {
               <h2 className="text-2xl font-semibold text-[#10446C]">
                 13. Contact Details & Notices
               </h2>
-              <p className="mt-4 text-gray-700 leading-relaxed">
+              <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
                 All notices should be sent to our registered office address.
                 Electronic communications are acceptable for most purposes.
               </p>
@@ -255,7 +255,7 @@ export default function page() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Highlight Item */}
             <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-amber-400">
-              <p className="text-gray-800 text-sm sm:text-base leading-relaxed">
+              <p className="text-gray-800 text-lg sm:text-base leading-relaxed">
                 <span className="font-semibold text-[#10446C]">
                   Minimum Term:
                 </span>{" "}
@@ -264,7 +264,7 @@ export default function page() {
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-amber-400">
-              <p className="text-gray-800 text-sm sm:text-base leading-relaxed">
+              <p className="text-gray-800 text-lg sm:text-base leading-relaxed">
                 <span className="font-semibold text-[#10446C]">
                   Cancellation:
                 </span>{" "}
@@ -273,14 +273,14 @@ export default function page() {
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-amber-400">
-              <p className="text-gray-800 text-sm sm:text-base leading-relaxed">
+              <p className="text-gray-800 text-lg sm:text-base leading-relaxed">
                 <span className="font-semibold text-[#10446C]">Equipment:</span>{" "}
                 Must be returned within 30 days of termination
               </p>
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-amber-400">
-              <p className="text-gray-800 text-sm sm:text-base leading-relaxed">
+              <p className="text-gray-800 text-lg sm:text-base leading-relaxed">
                 <span className="font-semibold text-[#10446C]">
                   Speed Commitments:
                 </span>{" "}
@@ -289,7 +289,7 @@ export default function page() {
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-amber-400">
-              <p className="text-gray-800 text-sm sm:text-base leading-relaxed">
+              <p className="text-gray-800 text-lg sm:text-base leading-relaxed">
                 <span className="font-semibold text-[#10446C]">
                   Complaints:
                 </span>{" "}

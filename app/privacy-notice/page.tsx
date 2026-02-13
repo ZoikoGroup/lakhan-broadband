@@ -31,11 +31,11 @@ export default function page() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-10">
           {/* ================= Sidebar ================= */}
           <aside className="lg:col-span-1 bg-white p-6 rounded-xl shadow-sm h-fit">
-            <h3 className="text-lg font-semibold text-[#10446C] mb-6">
+            <h3 className="text-lg md:text-xl font-semibold text-[#10446C] mb-6">
               Quick Navigation
             </h3>
 
-            <ul className="space-y-4 text-sm text-[#10446C]">
+            <ul className="space-y-4 text-base md:text-lg text-[#10446C]">
               {[
                 "Who We Are",
                 "What Personal Data We Collect",
@@ -53,7 +53,7 @@ export default function page() {
               ].map((item, index) => (
                 <li key={index}>
                   <a
-                    href={`#section-${index + 1}`}
+                    href={`#section-${index}`}
                     className="hover:text-amber-500 transition-colors"
                   >
                     {item}
@@ -70,7 +70,7 @@ export default function page() {
               <h2 className="text-2xl font-semibold text-[#10446C]">
                 1. Who We Are
               </h2>
-              <p className="mt-4 text-gray-700 leading-relaxed">
+              <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
                 Zoiko Broadband is a UK-based internet service provider
                 committed to protecting your privacy and personal data in
                 accordance with UK GDPR and Data Protection Act 2018.
@@ -85,17 +85,17 @@ export default function page() {
               <h2 className="text-2xl font-semibold text-[#10446C]">
                 2. What Personal Data We Collect
               </h2>
-              <p className="mt-4 text-gray-700 leading-relaxed">
-                . Full name, address, email, phone number
+              <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
+                .Full name, address, email, phone number
               </p>
-              <p className="mt-4 text-gray-700 leading-relaxed">
+              <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
                 .Payment information (encrypted)
               </p>
-              <p className="mt-4 text-gray-700 leading-relaxed">
-                . IP address, MAC address, device information Usage patterns
+              <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
+                .IP address, MAC address, device information Usage patterns
                 (e.g., data volumes, time of access)
               </p>
-              <p className="mt-4 text-gray-700 leading-relaxed">
+              <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
                 .Support interaction records (calls, chats, emails)
               </p>
             </div>
@@ -107,7 +107,7 @@ export default function page() {
               <h2 className="text-2xl font-semibold text-[#10446C]">
                 3. How We Use Your Data
               </h2>
-              <p className="mt-4 text-gray-700 leading-relaxed">
+              <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
                 We process your personal data for specific, legitimate purposes
                 including service delivery, customer support, billing, and fraud
                 prevention.
@@ -121,7 +121,7 @@ export default function page() {
               <h2 className="text-2xl font-semibold text-[#10446C]">
                 4.Sharing Your Data
               </h2>
-              <p className="mt-4 text-gray-700 leading-relaxed">
+              <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
                 We only share your data with trusted partners necessary for
                 service delivery, regulatory compliance, or with your explicit
                 consent.
@@ -134,7 +134,7 @@ export default function page() {
               <h2 className="text-2xl font-semibold text-[#10446C]">
                 5.Legal Basis for Processing
               </h2>
-              <p className="mt-4 text-gray-700 leading-relaxed">
+              <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
                 We process your data based on contract fulfillment, legal
                 obligations, legitimate interests, and where applicable, your
                 consent.
@@ -147,7 +147,7 @@ export default function page() {
               <h2 className="text-2xl font-semibold text-[#10446C]">
                 6. International Transfers
               </h2>
-              <p className="mt-4 text-gray-700 leading-relaxed">
+              <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
                 Any international data transfers are protected by appropriate
                 safeguards including adequacy decisions and standard contractual
                 clauses.
@@ -160,7 +160,7 @@ export default function page() {
               <h2 className="text-2xl font-semibold text-[#10446C]">
                 7. Data Retention
               </h2>
-              <p className="mt-4 text-gray-700 leading-relaxed">
+              <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
                 We retain your personal data only as long as necessary for the
                 purposes outlined in this notice, or as required by law. Account
                 data is typically retained for 7 years after service
@@ -174,7 +174,7 @@ export default function page() {
               <h2 className="text-2xl font-semibold text-[#10446C]">
                 8. Your Rights Under UK GDPR
               </h2>
-              <p className="mt-4 text-gray-700 leading-relaxed">
+              <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
                 You have comprehensive rights over your personal data, including
                 access, rectification, erasure, and portability rights.
               </p>
@@ -186,7 +186,7 @@ export default function page() {
               <h2 className="text-2xl font-semibold text-[#10446C]">
                 9. Cookies and Tracking
               </h2>
-              <p className="mt-4 text-gray-700 leading-relaxed">
+              <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
                 We use cookies and similar technologies to improve your
                 experience. See our Cookies Policy for detailed information.
               </p>
@@ -198,7 +198,7 @@ export default function page() {
               <h2 className="text-2xl font-semibold text-[#10446C]">
                 10. Security of Your Data
               </h2>
-              <p className="mt-4 text-gray-700 leading-relaxed">
+              <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
                 We implement robust technical and organizational measures to
                 protect your personal data against unauthorized access, loss, or
                 destruction.
@@ -211,7 +211,7 @@ export default function page() {
               <h2 className="text-2xl font-semibold text-[#10446C]">
                 11. Children's Privacy
               </h2>
-              <p className="mt-4 text-gray-700 leading-relaxed">
+              <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
                 We do not knowingly collect personal data from children under 16
                 without parental consent. If you believe we have collected such
                 data, please contact us immediately.
@@ -224,7 +224,7 @@ export default function page() {
               <h2 className="text-2xl font-semibold text-[#10446C]">
                 12. Changes to This Notice
               </h2>
-              <p className="mt-4 text-gray-700 leading-relaxed">
+              <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
                 We may update this Privacy Notice to reflect changes in our
                 practices or legal requirements. We will notify you of
                 significant changes.
@@ -237,7 +237,7 @@ export default function page() {
               <h2 className="text-2xl font-semibold text-[#10446C]">
                 13. How to Contact Us
               </h2>
-              <p className="mt-4 text-gray-700 leading-relaxed">
+              <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
                 For any privacy-related questions or to exercise your rights,
                 contact our Data Protection Officer at
                 privacy@https://zoikobroadband.com
@@ -321,7 +321,7 @@ export default function page() {
           <div className="grid grid-cols-1  gap-6">
             {/* Highlight Item */}
             <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-amber-400">
-              <p className="text-gray-800 text-sm sm:text-base leading-relaxed">
+              <p className="text-gray-800 text-lg sm:text-base leading-relaxed">
                 <span className="font-semibold text-[#10446C]">
                   Right to Access:
                 </span>{" "}
@@ -330,7 +330,7 @@ export default function page() {
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-amber-400">
-              <p className="text-gray-800 text-sm sm:text-base leading-relaxed">
+              <p className="text-gray-800 text-lg sm:text-base leading-relaxed">
                 <span className="font-semibold text-[#10446C]">
                   Right to Rectification:
                 </span>{" "}
@@ -339,7 +339,7 @@ export default function page() {
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-amber-400">
-              <p className="text-gray-800 text-sm sm:text-base leading-relaxed">
+              <p className="text-gray-800 text-lg sm:text-base leading-relaxed">
                 <span className="font-semibold text-[#10446C]">
                   Right to Erasure:
                 </span>{" "}
@@ -348,7 +348,7 @@ export default function page() {
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-amber-400">
-              <p className="text-gray-800 text-sm sm:text-base leading-relaxed">
+              <p className="text-gray-800 text-lg sm:text-base leading-relaxed">
                 <span className="font-semibold text-[#10446C]">
                   Right to Restrict Processing:
                 </span>{" "}
@@ -357,7 +357,7 @@ export default function page() {
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-amber-400">
-              <p className="text-gray-800 text-sm sm:text-base leading-relaxed">
+              <p className="text-gray-800 text-lg sm:text-base leading-relaxed">
                 <span className="font-semibold text-[#10446C]">
                   Right to Data Portability:
                 </span>{" "}
@@ -365,7 +365,7 @@ export default function page() {
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-amber-400">
-              <p className="text-gray-800 text-sm sm:text-base leading-relaxed">
+              <p className="text-gray-800 text-lg sm:text-base leading-relaxed">
                 <span className="font-semibold text-[#10446C]">
                   Right to Object:
                 </span>{" "}
@@ -374,7 +374,7 @@ export default function page() {
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-amber-400">
-              <p className="text-gray-800 text-sm sm:text-base leading-relaxed">
+              <p className="text-gray-800 text-lg sm:text-base leading-relaxed">
                 <span className="font-semibold text-[#10446C]">
                   Right not to be subject to automated decision-making:
                 </span>{" "}
@@ -385,7 +385,7 @@ export default function page() {
         </div>
       </section>
 
-      {/* ================= CONTACT & COMPLAINTS ================= */}
+      {/*  CONTACT & COMPLAINTS  */}
       <section className="w-full bg-[#10446C] py-14 px-4 sm:px-6 lg:px-8 text-white  rounded-2xl">
         <div className="max-w-6xl mx-auto">
           {/* Section Title */}
@@ -427,7 +427,7 @@ export default function page() {
         </div>
       </section>
 
-      {/* ================= COOKIE POLICY SUMMARY ================= */}
+      {/*  COOKIE POLICY SUMMARY  */}
       <section className="w-full bg-[#F9FBFD] py-14 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-lg sm:text-xl font-semibold text-[#10446C] mb-4">
