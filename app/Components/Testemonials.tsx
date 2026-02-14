@@ -1,8 +1,6 @@
+'use client';
 import React, { useEffect, useState } from "react";
-
-export default function Testemonials() {
-  const [active, setActive] = useState(1);
-  const testimonials = [
+const testimonials = [
     {
       name: "Aladdin Sullivan",
       role: "CEO Nigiang",
@@ -19,13 +17,20 @@ export default function Testemonials() {
       text: "Helped me to elaborate employee data, not only save and store, but also elaborate, process it so that it can be used as employee evaluation material. Such as looking at employee discipline from the recap of absences, leave, permits and more.",
     },
   ];
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActive((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
-    }, 5000); // 5 seconds
 
-    return () => clearInterval(interval);
-  }, []);
+export default function Testemonials() {
+  const [active, setActive] = useState(1);
+  
+ useEffect(() => {
+  const interval = setInterval(() => {
+    setActive((prev) =>
+      prev === testimonials.length - 1 ? 0 : prev + 1
+    );
+  }, 3000);
+
+  return () => clearInterval(interval);
+}, [testimonials.length]);
+
 
   return (
     <div>
@@ -43,7 +48,7 @@ export default function Testemonials() {
               {testimonials.map((item, index) => (
                 <div
                   key={index}
-                  className={`w-full max-w-sm transition-all duration-300
+                  className={`w-full max-w-sm transition-transform duration-300
                   ${
                     index === active
                       ? "bg-[#0F3D5E] text-white scale-100"

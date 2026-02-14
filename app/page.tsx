@@ -1,25 +1,8 @@
-"use client";
-import { useState } from "react";
+import Image from "next/image";
+import PlansTabs from "./Components/PlansTabs";
 import Testemonials from "./Components/Testemonials";
 
-interface Plan {
-  title: string;
-  speed: string;
-  downloadSpeed: string;
-  uploadSpeed: string;
-  price: number;
-  priceDisplay: string;
-  desc: string;
-  features: string[];
-  popularity: number;
-  contractLength: number;
-  badge: string | null;
-}
-
 export default function Home() {
-  const [activeTab, setActiveTab] = useState("Speed");
-  const tabs = ["Speed", "Price", "Popularity", "Contract Length"];
-
   // All plans data
   const allPlans = [
     {
@@ -96,33 +79,7 @@ export default function Home() {
     },
   ];
 
-  // Sort plans based on active tab (you can implement actual sorting logic here)
-  const getSortedPlans = () => {
-    let sorted = [...allPlans];
-
-    switch (activeTab) {
-      case "Speed":
-        sorted.sort(
-          (a, b) => parseFloat(b.downloadSpeed) - parseFloat(a.downloadSpeed),
-        );
-        break;
-      case "Price":
-        sorted.sort((a, b) => a.price - b.price);
-        break;
-      case "Popularity":
-        sorted.sort((a, b) => b.popularity - a.popularity);
-        break;
-      case "Contract Length":
-        sorted.sort((a, b) => a.contractLength - b.contractLength);
-        break;
-      default:
-        break;
-    }
-
-    return sorted;
-  };
-
-return (
+  return (
     <div className="-mt-20 md:-mt-24 lg:-mt-28">
       {/* Hero - section ..*/}
       <section className="w-full mt-25 bg-[#19598b] flex flex-col lg:flex-row items-start lg:items-center justify-center gap-10  px-5 sm:px-10 md:px-16 lg:px-32 py-12 ">
@@ -130,10 +87,18 @@ return (
         <div className="w-full lg:w-1/2 flex flex-col justify-center">
           {/* Row 1 */}
           <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
-            <img
+            {/* <img
               className="h-10 sm:h-12 w-auto"
               src="/hero-pic-left.png"
               alt="hero-pic-left"
+            /> */}
+
+            <Image
+              src="/hero-pic-left.png"
+              alt="Decorative hero accent"
+              width={150}
+              height={60}
+              className="h-10 sm:h-12 w-auto"
             />
             <h1 className="text-[#F5C241] font-bold text-2xl sm:text-3xl md:text-4xl">
               Built on
@@ -166,10 +131,20 @@ return (
 
         {/* RIGHT IMAGE */}
         <div className="w-full lg:w-1/2 flex items-center justify-center">
-          <img
+          {/* <img
             className="w-full max-w-md sm:max-w-lg lg:max-w-xl rounded-2xl border-2 border-blue-950"
             src="/hero-pic-right.jpg"
             alt="hero-pic-right"
+          /> */}
+
+          <Image
+            src="/hero-pic-right.jpg"
+            alt="Hero"
+            width={900}
+            height={600}
+            priority
+            fetchPriority="high"
+            className="w-full max-w-md sm:max-w-lg lg:max-w-xl rounded-2xl border-2 border-blue-950"
           />
         </div>
       </section>
@@ -296,97 +271,7 @@ return (
       </section>
 
       {/* Choose your plan .. */}
-      <section className="w-full bg-[#F5FAFF] py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          {/* Header */}
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-[#10446C]">
-            Choose Your Perfect Fibre Plan
-          </h2>
-
-          <p className="text-center text-gray-600 mt-2 max-w-2xl mx-auto">
-            Superfast broadband packages designed for modern British homes
-          </p>
-
-          {/* Tabs - Filtering Buttons */}
-   <div className="mt-8 flex gap-1 sm:gap-2 justify-center items-center bg-gray-100 rounded-full p-1.5 sm:p-2 w-full max-w-[95%] sm:max-w-fit mx-auto overflow-x-auto">
-  {tabs.map((tab) => (
-    <button
-      key={tab}
-      onClick={() => setActiveTab(tab)}
-      className={`px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full text-[10px] sm:text-xs md:text-sm font-medium transition-all whitespace-nowrap shrink-0
-      ${
-        activeTab === tab
-          ? "bg-[#F5C241] text-[#10446C] shadow-sm"
-          : "bg-transparent text-gray-600 hover:text-[#10446C]"
-      }`}
-    >
-      {tab}
-    </button>
-  ))}
-</div>
-
-          {/* Plans Grid */}
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {getSortedPlans().map((plan: Plan) => (
-              <div
-                key={plan.title}
-                className="bg-white rounded-2xl p-6 flex flex-col justify-between border-2 border-gray-100 hover:border-[#F5C241] hover:shadow-xl transition-all relative"
-              >
-                {/* Badge if exists */}
-                {plan.badge && (
-                  <div className="absolute top-4 right-4 bg-[#10446C] text-white text-xs font-bold px-3 py-1 rounded-full">
-                    {plan.badge}
-                  </div>
-                )}
-
-                <div>
-                  {/* Plan Title */}
-                  <h3 className="font-bold text-lg text-[#10446C] pr-20">
-                    {plan.title}
-                  </h3>
-
-                  {/* Speed */}
-                  <p className="mt-4 font-bold text-3xl text-[#F5C241]">
-                    {plan.speed}
-                  </p>
-
-                  <p className="mt-1 text-sm text-gray-500">{plan.desc}</p>
-
-                  {/* Price */}
-                  <div className="mt-6">
-                    <p className="text-4xl font-bold text-[#10446C]">
-                      {plan.priceDisplay}
-                    </p>
-                    <p className="text-sm text-gray-500 mt-1">per month</p>
-                  </div>
-
-                  {/* Features */}
-                  <ul className="mt-6 space-y-3 text-sm text-gray-700">
-                    {plan.features.map((feature: string, index: number) => (
-                      <li key={index} className="flex items-start gap-2">
-                        <span className="text-green-600 mt-0.5">✓</span>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Button */}
-                <button className="mt-6 w-full py-3 rounded-full font-semibold bg-[#10446C] text-white hover:bg-[#0d3a5c] transition-colors">
-                  Choose This Package
-                </button>
-              </div>
-            ))}
-          </div>
-
-          {/* View All Button */}
-          <div className="mt-12 flex justify-center">
-            <button className="px-8 py-3 rounded-full border-2 border-[#10446C] text-[#10446C] font-semibold hover:bg-[#10446C] hover:text-white transition-all">
-              View All
-            </button>
-          </div>
-        </div>
-      </section>
+      <PlansTabs plans={allPlans} />
 
       {/* Why choose zoiko .. */}
       <section className="w-full bg-[#FFD56A] py-14 px-4">
@@ -462,7 +347,15 @@ return (
             <div className="text-white rounded-2xl p-6 w-full max-w-sm">
               {/* Logo with white background */}
               <div className="bg-white rounded-xl p-3 w-fit mx-auto mb-4">
-                <img src="/ZM-logo.png" alt="Zoiko Mobile" className="h-10" />
+                {/* <img src="/ZM-logo.png" alt="Zoiko Mobile" className="h-10" /> */}
+                <Image
+                  src="/ZM-logo.png"
+                  alt="Zoiko Mobile"
+                  width={160}
+                  height={60}
+                  className="h-10 w-auto"
+                  loading="lazy"
+                />
               </div>
 
               <h3 className="font-semibold text-[#F5C241] text-lg">
@@ -488,7 +381,15 @@ return (
             <div className="text-white rounded-2xl p-6 w-full max-w-sm">
               {/* Logo with white background */}
               <div className="bg-white rounded-xl p-3 w-fit mx-auto mb-4">
-                <img src="/ZO-Logo.png" alt="Zoiko Orbit" className="h-10" />
+                {/* <img src="/ZO-Logo.png" alt="Zoiko Orbit" className="h-10" /> */}
+                <Image
+                  src="/ZO-Logo.png"
+                  alt="Zoiko Orbit"
+                  width={160}
+                  height={60}
+                  className="h-10 w-auto"
+                  loading="lazy"
+                />
               </div>
 
               <h3 className="font-semibold text-[#F5C241] text-lg">
@@ -562,7 +463,7 @@ return (
       </section>
 
       {/* TESTIMONIAL SLIDER SECTION */}
-        <Testemonials/>
+      <Testemonials />
     </div>
   );
 }
