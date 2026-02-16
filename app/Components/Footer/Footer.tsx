@@ -1,13 +1,9 @@
-"use client";
-import { SetStateAction, useState } from "react";
+
 import Link from "next/link";
+import FooterMenu from "./FooterMenu";
 
 export default function Footer() {
-  const [openSection, setOpenSection] = useState<string | null>(null);
 
-  const toggleSection = (section: string) => {
-    setOpenSection(openSection === section ? null : section);
-  };
 
   const footerSections = [
     {
@@ -59,15 +55,15 @@ export default function Footer() {
   ];
 
   return (
-    <div className="bg-[#10446C] w-full border-t-2 p-3">
-      <div className="footer-items w-9/10 mx-auto p-5 md:p-10">
+    <footer className="bg-[#10446C] w-full border-t-2 p-3 role=contentinfo">
+      <div className="footer-items w-[90%] mx-auto p-5 md:p-10">
         {/* Desktop View - Standard Layout */}
         <div className="hidden lg:flex lg:flex-row justify-between">
           {footerSections.map((section) => (
             <div key={section.id}>
-              <h1 className="text-2xl md:text-2xl text-[#f5c241] font-bold my-3">
+              <h2 className="text-2xl md:text-2xl text-[#f5c241] font-bold my-3">
                 {section.title}
-              </h1>
+              </h2>
               <ul className="text-[#CBD5E1] text-lg md:text-lg font-normal leading-10">
                 {section.links.map((link, index) => (
                   <li key={index}>
@@ -82,59 +78,7 @@ export default function Footer() {
         </div>
 
         {/* Mobile View - Accordion Layout */}
-        <div className="lg:hidden flex flex-col gap-2">
-          {footerSections.map((section) => (
-            <div key={section.id} className="border-b border-[#2a6d9e]">
-              {/* Section Header - Clickable */}
-              <button
-                onClick={() => toggleSection(section.id)}
-                className="w-full flex items-center justify-between py-4 text-left"
-              >
-                <h2 className="text-xl text-[#f5c241] font-bold">
-                  {section.title}
-                </h2>
-                {/* Chevron Icon */}
-                <svg
-                  className={`w-5 h-5 text-[#f5c241] transition-transform duration-300 ${
-                    openSection === section.id ? "rotate-180" : ""
-                  }`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-
-              {/* Section Links - Collapsible */}
-              <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  openSection === section.id
-                    ? "max-h-96 opacity-100 pb-4"
-                    : "max-h-0 opacity-0"
-                }`}
-              >
-                <ul className="text-[#CBD5E1] text-base font-normal leading-7 space-y-2">
-                  {section.links.map((link, index) => (
-                    <li key={index}>
-                      <Link
-                        href={link.href}
-                        className="hover:text-[#f5c241] transition-colors block py-1"
-                      >
-                        {link.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
-        </div>
+          <FooterMenu sections={footerSections} />
       </div>
 
       {/* Footer Bottom - Copyright */}
@@ -149,6 +93,6 @@ export default function Footer() {
           to the Broadband Speeds Code of Practice.
         </p>
       </div>
-    </div>
+    </footer>
   );
 }

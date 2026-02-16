@@ -1,6 +1,7 @@
 import Image from "next/image";
 import PlansTabs from "./Components/PlansTabs";
-import Testemonials from "./Components/Testemonials";
+import TestimonialLoader from "./Components/TestimonialLoader";
+
 
 export default function Home() {
   // All plans data
@@ -463,7 +464,7 @@ export default function Home() {
       </section>
 
       {/* TESTIMONIAL SLIDER SECTION */}
-      <Testemonials />
+      <TestimonialLoader />
     </div>
   );
 }
