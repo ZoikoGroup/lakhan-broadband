@@ -2,7 +2,6 @@ import Image from "next/image";
 import PlansTabs from "./Components/PlansTabs";
 import TestimonialLoader from "./Components/TestimonialLoader";
 
-
 export default function Home() {
   // All plans data
   const allPlans = [
