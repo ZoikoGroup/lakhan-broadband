@@ -94,7 +94,7 @@ export default function Home() {
             /> */}
 
             <Image
-              src="/hero-pic-left.png"
+              src="/Images/hero-pic-left.png"
               alt="Decorative hero accent"
               width={150}
               height={60}
@@ -138,7 +138,7 @@ export default function Home() {
           /> */}
 
           <Image
-            src="/hero-pic-right.jpg"
+            src="/Images/hero-pic-right.jpg"
             alt="Hero"
             width={900}
             height={600}
@@ -349,7 +349,7 @@ export default function Home() {
               <div className="bg-white rounded-xl p-3 w-fit mx-auto mb-4">
                 {/* <img src="/ZM-logo.png" alt="Zoiko Mobile" className="h-10" /> */}
                 <Image
-                  src="/ZM-logo.png"
+                  src="/Images/ZM-logo.png"
                   alt="Zoiko Mobile"
                   width={160}
                   height={60}
@@ -383,7 +383,7 @@ export default function Home() {
               <div className="bg-white rounded-xl p-3 w-fit mx-auto mb-4">
                 {/* <img src="/ZO-Logo.png" alt="Zoiko Orbit" className="h-10" /> */}
                 <Image
-                  src="/ZO-Logo.png"
+                  src="/Images/ZO-Logo.png"
                   alt="Zoiko Orbit"
                   width={160}
                   height={60}
