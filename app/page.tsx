@@ -151,7 +151,7 @@ export default function Home() {
 
       {/* Find your plan .. */}
       <section className="w-full bg-[#E5F0FF] py-16 px-4">
-        <div className="max-w-6xl mx-auto bg-white rounded-3xl p-6 md:p-10">
+        <div className="max-w-6xl mx-auto bg-white border-t-4 border-[#10446C] rounded-3xl p-6 md:p-10">
           {/* Header */}
           <h2 className="text-2xl md:text-3xl font-bold text-center text-[#10446C]">
             Let’s find your perfect plan

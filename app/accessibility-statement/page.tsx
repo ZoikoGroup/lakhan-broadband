@@ -7,7 +7,7 @@ export default function page() {
 
       {/* Accessibility statement hero section  */}
       <section className="w-full bg-[#10446C] py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto text-center text-white">
+        <div className="max-w-6xl mx-auto text-white text-center">
           {/* Heading */}
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold leading-tight">
             Accessibility at Zoiko Broadband
@@ -22,33 +22,36 @@ export default function page() {
             technologies.
           </p>
         </div>
+        <div className="mt-8 bg-white text-black font-semibold px-6 py-4 rounded-xl  shadow-sm max-w-fit mx-auto">
+            Request Accessibility Support
+          </div>
       </section>
 
       {/* Our Accessibility Commitment */}
       <section className="w-full bg-white py-14 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="md:text-2xl sm:text-xl font-semibold text-[#10446C] mb-4">
+          <h2 className="md:text-2xl sm:text-xl font-semibold text-[#10446C] mb-6">
             Our Accessibility Commitment
           </h2>
 
-          <p className="md:text-lg sm:text-base text-gray-700 sm:leading-relaxed md:leading-10 max-w-3xl">
+          <p className="md:text-lg sm:text-base text-gray-700 sm:leading-relaxed md:leading-8 mb-3">
             WCAG 2.2 AA standard compliance
           </p>
-          <p className="md:text-lg sm:text-base text-gray-700 sm:leading-relaxed md:leading-10 max-w-4xl">
+          <p className="md:text-lg sm:text-base text-gray-700 sm:leading-relaxed md:leading-8 mb-3">
             Inclusive design from inception to deployment
           </p>
-          <p className="md:text-lg sm:text-base text-gray-700 sm:leading-relaxed md:leading-10 max-w-3xl">
+          <p className="md:text-lg sm:text-base text-gray-700 sm:leading-relaxed md:leading-8 mb-3">
             Equal access through visual, auditory, and motor-friendly design
           </p>
-          <p className="md:text-lg sm:text-base text-gray-700 sm:leading-relaxed md:leading-10 max-w-3xl">
+          <p className="md:text-lg sm:text-base text-gray-700 sm:leading-relaxed md:leading-8">
             Accessibility embedded in Zoiko's digital inclusion strategy
           </p>
         </div>
       </section>
 
       {/* Features Supporting Accessibility */}
-      <section className="w-full bg-[#f9f9f9] py-16 px-4 sm:px-6 lg:px-18">
-        <div className="max-w-7xl mx-auto">
+      <section className="w-full bg-[#f9f9f9] py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
           {/* Section Heading */}
           <h2 className="text-xl sm:text-2xl font-semibold text-[#10446C] mb-8">
             Features Supporting Accessibility
@@ -111,24 +114,24 @@ export default function page() {
       {/* Known Limitations */}
       <section className="w-full bg-white py-14 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="md:text-2xl sm:text-xl font-semibold text-[#10446C] mb-4">
+          <h2 className="md:text-2xl sm:text-xl font-semibold text-[#10446C] mb-6">
             Known Limitations
           </h2>
 
-          <p className="md:text-lg sm:text-sm text-gray-700 sm:leading-relaxed md:leading-10 max-w-3xl">
+          <p className="md:text-lg sm:text-base text-gray-700 sm:leading-relaxed md:leading-8 mb-3">
             Certain third-party plugins may not be fully accessible
           </p>
-          <p className="md:text-lg sm:text-sm text-gray-700 sm:leading-relaxed md:leading-10 max-w-4xl">
+          <p className="md:text-lg sm:text-base text-gray-700 sm:leading-relaxed md:leading-8 mb-6">
             Some older PDFs may not meet current accessibility guidelines
           </p>
-        </div>
-        <div className="mt-5 bg-[#0C3A5A] text-xs md:text-base text-white font-semibold px-6 py-4 rounded-md shadow-sm max-w-sm md:max-w-md md:mx-16">
-          <Link href="/speed-check">Let Us Know If You Encounter a Problem</Link>
+          <div className="bg-[#0C3A5A] text-xs md:text-base text-white font-semibold px-6 py-4 rounded-md shadow-sm w-fit">
+            <Link href="/speed-check">Let Us Know If You Encounter a Problem</Link>
+          </div>
         </div>
       </section>
 
       {/* What We're Working On */}
-      <section className="w-full bg-[#f9f9f9] py-16 px-4 sm:px-6 lg:px-18">
+      <section className="w-full bg-[#f9f9f9] py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Section Heading */}
           <h2 className="text-2xl sm:text-2xl font-semibold text-[#10446C] mb-8">
@@ -188,11 +191,11 @@ export default function page() {
       {/* Compliance Statement */}
       <section className="w-full bg-white py-14 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="md:text-2xl sm:text-xl font-semibold text-[#10446C] mb-4">
+          <h2 className="md:text-2xl sm:text-xl font-semibold text-[#10446C] mb-6">
             Compliance Statement
           </h2>
 
-          <p className="md:text-lg sm:text-base text-gray-700 sm:leading-relaxed md:leading-8 max-w-6xl">
+          <p className="md:text-lg sm:text-base text-gray-700 sm:leading-relaxed md:leading-8 max-w-4xl">
             "This website has been developed in accordance with the Web Content Accessibility Guidelines (WCAG) 2.2, Level AA, and the UK Equality Act 2010. We are actively reviewing and improving to maintain high accessibility standards."
           </p>
         
