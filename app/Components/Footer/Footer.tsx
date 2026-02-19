@@ -46,7 +46,7 @@ export default function Footer() {
       title: "Our Company",
       links: [
         { name: "About Zoiko Broadband", href: "/about-us" },
-        { name: "Our Sustainability Promise", href: "/sustainability" },
+        { name: "Our Sustainability Promise", href: "/our-sustainability" },
         { name: "Careers at Zoiko", href: "/careers" },
         { name: "Zoiko Group", href: "/zoiko-group" },
         { name: "Partners & Affiliations", href: "/partners-affiliations" },

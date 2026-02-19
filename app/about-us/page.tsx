@@ -25,7 +25,7 @@ export default function page() {
         {/* LEFT IMAGE */}
         <div className="w-full lg:w-1/2 flex items-center justify-center">
           <Image
-            src="/Images/about-hero-pic.png"
+            src="/Images/Aboutus/about-hero-pic.png"
             alt="Hero"
             width={900}
             height={600}
@@ -63,17 +63,17 @@ export default function page() {
           </h2>
           {[
             {
-              src: "/Images/Sec1-icon1.png",
+              src: "/Images/Aboutus/Sec1-icon1.png",
               label: "Expanding into underserved rural areas",
             },
-            { src: "/Images/Sec1-icon2.png", label: "Fast Connected" },
-            { src: "/Images/Sec1-icon3.png", label: "Support 24/7" },
+            { src: "/Images/Aboutus/Sec1-icon2.png", label: "Fast Connected" },
+            { src: "/Images/Aboutus/Sec1-icon3.png", label: "Support 24/7" },
             {
-              src: "/Images/Sec1-icon4.png",
+              src: "/Images/Aboutus/Sec1-icon4.png",
               label: "Expanding into underserved rural areas",
             },
             {
-              src: "/Images/Sec1-icon5.png",
+              src: "/Images/Aboutus/Sec1-icon5.png",
               label: "Expanding into underserved rural areas",
             },
           ].map((item, i) => (
@@ -112,7 +112,7 @@ export default function page() {
           <div className="flex flex-col items-center sm:items-center shrink-0  sm:w-52 md:mr-5">
             <div className="w-72 h-72 sm:w-72 sm:h-72 rounded-xl overflow-hidden shadow-md">
               <Image
-                src="/Images/Frame-1.png"
+                src="/Images/Aboutus/Frame-1.png"
                 alt="Samuel Gittens – Marketing Director"
                 width={300}
                 height={300}
@@ -147,7 +147,7 @@ export default function page() {
         <div className="max-w-6xl mx-auto text-center ">
           {/* Heading */}
           <h2 className="text-2xl md:text-3xl font-semibold ">
-            Integrated Services
+            Part of Something Bigger 
           </h2>
 
           <p className=" text-[#494949] text-base md:text-lg mt-4 mb-5 max-w-4xl mx-auto">
@@ -163,10 +163,10 @@ export default function page() {
           {/* Bundle cards */}
           <div className="mt-12 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-items-center">
             {[
-              { src: "/Images/ZT_Logo.png", alt: "Zoiko TV" },
-              { src: "/Images/ZM-logo.png", alt: "Zoiko Mobile" },
-              { src: "/Images/ZO-Logo.png", alt: "Zoiko Orbit" },
-              { src: "/Images/ZN_Logo.png", alt: "Zoiko Network" },
+              { src: "/Images/Aboutus/ZT_Logo.png", alt: "Zoiko TV" },
+              { src: "/Images/Aboutus/ZM-logo.png", alt: "Zoiko Mobile" },
+              { src: "/Images/Aboutus/ZO-Logo.png", alt: "Zoiko Orbit" },
+              { src: "/Images/Aboutus/ZN_Logo.png", alt: "Zoiko Network" },
             ].map((logo) => (
               <div key={logo.alt} className="w-full max-w-xs">
                 <div className="bg-white rounded-xl w-full h-20 sm:h-24 flex items-center justify-center p-3">
@@ -191,7 +191,7 @@ export default function page() {
       <section className="bg-[#756DE7] w-full flex flex-col items-center justify-center py-4 sm:py-10 px-0">
         {/* Mobile Image - shown below md */}
         <Image
-          src="/Images/Sec5-mv.png"
+          src="/Images/Aboutus/Sec5-mv.png"
           alt="Part of Something Bigger"
           width={480}
           height={900}
@@ -201,7 +201,7 @@ export default function page() {
 
         {/* Desktop Image - shown above md */}
         <Image
-          src="/Images/Sec5-dv.png"
+          src="/Images/Aboutus/Sec5-dv.png"
           alt="Part of Something Bigger"
           width={1200}
           height={600}
@@ -227,11 +227,11 @@ export default function page() {
             className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
               {[
             {
-              src: "/Images/Sec6-icon1.png",
+              src: "/Images/Aboutus/Sec6-icon1.png",
               label: "Seamless upgrades, remote reboots, and smart notifications",
             },
-            { src: "/Images/Sec6-icon2.png", label: "Smart network provisioning via ZoikoNex OSS/BSS" },
-            { src: "/Images/Sec6-icon3.png", label: "Real-time diagnostics and AI fault prediction" },
+            { src: "/Images/Aboutus/Sec6-icon2.png", label: "Smart network provisioning via ZoikoNex OSS/BSS" },
+            { src: "/Images/Aboutus/Sec6-icon3.png", label: "Real-time diagnostics and AI fault prediction" },
           ].map((item, i) => (
           
             <div key={i} className="bg-white rounded-2xl border border-gray-200 p-8 flex flex-col items-center justify-between gap-6">
