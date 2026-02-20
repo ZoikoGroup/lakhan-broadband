@@ -94,7 +94,7 @@ export default function page() {
         {/* RIGHT  */}
         <div className="w-full lg:w-[60%] flex items-center justify-center">
           <Image
-            src="/ImagesAboutus/about-section1-rightpic.png"
+            src="/Images/Aboutus/about-section1-rightpic.png"
             alt="Hero"
             width={1000}
             height={600}
