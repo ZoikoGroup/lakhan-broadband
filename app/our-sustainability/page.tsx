@@ -16,7 +16,7 @@ export default function page() {
         </div>
         <div className="w-full lg:w-1/2 py-4">
           <Image
-            src="/Images/oursustainability/hero-pic.png"
+            src="/Images/Oursustainability/hero-pic.png"
             alt="Our Sustainability"
             width={600}
             height={400}
@@ -36,7 +36,7 @@ export default function page() {
           <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {[
               {
-                src: "/Images/oursustainability/Sec1-icon1.png",
+                src: "/Images/Oursustainability/Sec1-icon1.png",
                 label: "Carbon-Neutral Operations",
                 year: "2030",
                 description:
@@ -44,7 +44,7 @@ export default function page() {
                 progress: "45%",
               },
               {
-                src: "/Images/oursustainability/Sec1-icon2.png",
+                src: "/Images/Oursustainability/Sec1-icon2.png",
                 label: "100% Renewable Energy",
                 year: "2027",
                 description:
@@ -52,7 +52,7 @@ export default function page() {
                 progress: "67%",
               },
               {
-                src: "/Images/oursustainability/Sec1-icon3.png",
+                src: "/Images/Oursustainability/Sec1-icon3.png",
                 label: "Net-Zero Supply Chain",
                 year: "2035",
                 description:
@@ -100,7 +100,7 @@ export default function page() {
           <div className="bg-white rounded-3xl shadow-lg overflow-hidden flex flex-col lg:flex-row">
             <div className="lg:w-1/2 h-72 lg:h-auto">
               <Image
-                src="/Images/oursustainability/Sec2-pic.png"
+                src="/Images/Oursustainability/Sec2-pic.png"
                 alt="Our Sustainability"
                 width={500}
                 height={250}
@@ -158,7 +158,7 @@ export default function page() {
             {/* Icon */}
             <div className="mb-4">
               <Image
-                src="/Images/oursustainability/phone.png"
+                src="/Images/Oursustainability/phone.png"
                 alt="Paperless Billing"
                 width={60}
                 height={60}
@@ -223,7 +223,7 @@ export default function page() {
           <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {[
               {
-                src: "/Images/oursustainability/earth.png",
+                src: "/Images/Oursustainability/earth.png",
                 label: "CO₂ Saved",
                 quantity: "12,847",
                 units: "Tonnes",
@@ -231,7 +231,7 @@ export default function page() {
                 progress: "+156 tonnes this month",
               },
               {
-                src: "/Images/oursustainability/recycle.png",
+                src: "/Images/Oursustainability/recycle.png",
                 label: "Devices Recycled",
                 quantity: "89,432",
                 units: "Units",
@@ -239,7 +239,7 @@ export default function page() {
                 progress: "+423 devices this week",
               },
               {
-                src: "/Images/oursustainability/thunder.png",
+                src: "/Images/Oursustainability/thunder.png",
                 label: "Renewable Energy",
                 quantity: "67.3",
                 units: "%",
@@ -247,7 +247,7 @@ export default function page() {
                 progress: "+2.1% this quarter",
               },
               {
-                src: "/Images/oursustainability/car.png",
+                src: "/Images/Oursustainability/car.png",
                 label: "Trips Avoided",
                 quantity: "34,829",
                 units: "Journeys",
