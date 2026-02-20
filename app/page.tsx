@@ -349,7 +349,7 @@ export default function Home() {
               <div className="bg-white rounded-xl p-3 w-fit mx-auto mb-4">
                 {/* <img src="/ZM-logo.png" alt="Zoiko Mobile" className="h-10" /> */}
                 <Image
-                  src="/Images/ZM-logo.png"
+                  src="/Images/Aboutus/ZM-logo.png"
                   alt="Zoiko Mobile"
                   width={160}
                   height={60}
@@ -383,7 +383,7 @@ export default function Home() {
               <div className="bg-white rounded-xl p-3 w-fit mx-auto mb-4">
                 {/* <img src="/ZO-Logo.png" alt="Zoiko Orbit" className="h-10" /> */}
                 <Image
-                  src="/Images/ZO-Logo.png"
+                  src="/Images/Aboutus/ZO-Logo.png"
                   alt="Zoiko Orbit"
                   width={160}
                   height={60}
