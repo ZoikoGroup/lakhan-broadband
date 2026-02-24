@@ -77,8 +77,8 @@ export default function CareerPathways() {
               `}
             >
               {/* TOP */}
-              <div>
-                <div className="mb-5">
+              <div >
+                <div className="mb-5 flex justify-center">
                   <Image
                     src={item.icon}
                     alt={item.title}
